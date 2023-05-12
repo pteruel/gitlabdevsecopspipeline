@@ -64,6 +64,10 @@ build_image:
     - docker push $CI_REGISTRY_IMAGE:latest
   needs: [build_job]
 
+container_scanning:
+  variables:
+    CS_IMAGE: $CONTAINER_TEST_IMAGE
+
 secret_detection:
   variables:
     SECRET_DETECTION_HISTORIC_SCAN: "true"
